@@ -185,32 +185,68 @@ $(document).ready(function() {
     		}
     	});
     }
-jQuery('#form-callback').validate({
-    rules:{
-      name:{
-          required: true,
-          minlength: 2,
-          maxlength: 16,
-      },
-      phone:{
-          required: true,
-          minlength: 5,
-          maxlength: 14,
-      },
-       },
-    messages:{
-      name:{
-          required: "Это поле обязательно для заполнения",
-          minlength: "Имя должно быть минимум 2 символа",
-          maxlength: "Максимальное число символо - 16",
-      },
-      phone:{
-          required: "Это поле обязательно для заполнения",
-          minlength: "Телефон должен быть минимум 5 символа",
-          maxlength: "Пароль должен быть максимум 14 символов",
-      },
+    $('#form-callback').validate({
+        rules:{
+          name:{
+              required: true,
+              minlength: 2,
+              maxlength: 16,
+          },
+          phone:{
+              required: true,
+              minlength: 5,
+              maxlength: 14,
+          },
+           },
+        messages:{
+          name:{
+              required: "Это поле обязательно для заполнения",
+              minlength: "Имя должно быть минимум 2 символа",
+              maxlength: "Максимальное число символо - 16",
+          },
+          phone:{
+              required: "Это поле обязательно для заполнения",
+              minlength: "Телефон должен быть минимум 5 символа",
+              maxlength: "Пароль должен быть максимум 14 символов",
+          },
+        }
+    });
+    
+    $('#form-callback').on('submit', function(e) {
+        e.preventDefault();
+        
+        if($(this).valid()) {
+            var form = $(this),
+                method = $(this).attr('method'),
+                action = $(this).attr('action'),
+                data = $(this).serialize();
+                
+            mail(form, method, action, data);
+        }
+        
+        return;
+    });
+  
+    /**
+     * send mail
+     */
+    function mail(form, method, action, data) {
+        $.ajax({
+            type:   method,
+            url:    action,
+            data:   data,
+            dataType: 'json',
+            beforeSend: function(data) {
+                form.find('button[type=submit]').attr('disabled', true);
+            },
+            success: function(data) {
+                form.html(data);
+            },
+            afterSend: function(data) {
+                form.find('button[type=submit]').attr('disabled', false);
+            }
+        })
     }
-  });
 });
 
 // Cart add remove functions

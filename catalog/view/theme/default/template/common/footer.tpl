@@ -9,7 +9,7 @@
         <p class="modal-description text-center">И мы обязательно перезвоним в ближйшее время</p>
       </div>
       <div class="modal-body">
-        <form id="form-callback" action="">
+          <form id="form-callback" action="index.php?route=mail/mail" method="POST">
           <input class="form-control" type="text" name="name" placeholder="Введите имя" />
           <input class="form-control" type="text" name="phone" placeholder="Введите телефон" />
           <button class="btn btn-submit" type="submit">Позвоните мне</button>
