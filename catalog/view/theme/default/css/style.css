@@ -95,9 +95,9 @@ body {
   text-align: center;
   transition: background .4s;
 }
-.top-nav li a:hover,
-.top-nav li a:focus,
-.top-nav li a:active {
+.top-nav li:hover a,
+.top-nav li:focus a,
+.top-nav li:active a {
   text-decoration: none;
   background: #000000;
 }
@@ -118,6 +118,45 @@ body {
 }
 .top-nav li:nth-child(3) a:before {
   background: url(../img/icon-menu.png) no-repeat -100px 0;
+}
+.top-nav li:nth-child(1):hover .dropdown-menu {
+  opacity: 1;
+}
+.top-nav li .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  opacity: 0;
+  z-index: 99;
+  transition: opacity .4s;
+}
+.top-nav li .dropdown-menu li {
+  display: block;
+}
+.top-nav li .dropdown-menu li a,
+.top-nav li .dropdown-menu li a:hover,
+.top-nav li .dropdown-menu li a:focus,
+.top-nav li .dropdown-menu li a:active {
+  display: block;
+  position: relative;
+  width: 240px;
+  padding: 10px 0 10px 23px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: #000000;
+}
+.top-nav li .dropdown-menu li:nth-child(1) a:before,
+.top-nav li .dropdown-menu li:nth-child(2) a:before,
+.top-nav li .dropdown-menu li:nth-child(3) a:before {
+  content: none;
 }
 /* Header section */
 .header {

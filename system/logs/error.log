@@ -41,3 +41,5 @@
 2015-05-28 14:52:16 - PHP Notice:  Trying to get property of non-object in /home/ari/ari.in.ua/store/catalog/model/catalog/searching_car.php on line 6
 2015-05-28 15:24:03 - PHP Notice:  Undefined index: year in /home/ari/ari.in.ua/store/catalog/controller/common/searching_car.php on line 11
 2015-05-28 15:24:03 - PHP Notice:  Undefined index: model in /home/ari/ari.in.ua/store/catalog/controller/common/searching_car.php on line 15
+2015-05-29 10:34:46 - PHP Notice:  Undefined variable: categories in /home/ari/ari.in.ua/store/catalog/view/theme/default/template/common/home.tpl on line 22
+2015-05-29 10:34:46 - PHP Warning:  Invalid argument supplied for foreach() in /home/ari/ari.in.ua/store/catalog/view/theme/default/template/common/home.tpl on line 22
