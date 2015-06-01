@@ -1,11 +1,10 @@
 <?php
 class ControllerCommonSearchingCar extends Controller {
     public function index() {
-
         $this->load->model('catalog/searching_car');
 
-        if (isset($this->request->post['make'])) {
-            $make = $this->request->post['make'];
+        if (isset($this->request->post['brand'])) {
+            $brand = $this->request->post['brand'];
         }
 
         if (isset($this->request->post['year'])) {
@@ -16,36 +15,12 @@ class ControllerCommonSearchingCar extends Controller {
             $model = $this->request->post['model'];
         }
 
-        if (isset($make)) {
-            $result = $this->model_catalog_searching_car->getAttributes($make);
-
-            if ($result) {
-
-                foreach ($result as $make) {
-                    $data['make'][] = array(
-                        'name' => $make['name']
-                    );
-                }
-
-                echo json_encode($data['make']);
-            }
+        if (isset($this->request->post['category_id'])) {
+            $category_id = $this->request->post['category_id'];
         }
 
-        if (isset($year)) {
-            $result = $this->model_catalog_searching_car->getAttributes($year);
+        $results = $this->model_catalog_searching_car->getProducts($brand, $yaer, $model, $category_id);
 
-            if ($result) {
-
-                foreach ($result as $yaer) {
-                    $data['yaer'][] = array(
-                        'name' => $year['name']
-                    );
-                }
-
-                var_dump($year);
-
-                echo json_encode($data['yaer']);
-            }
-        }
+        var_dump($results);
     }
 }

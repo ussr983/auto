@@ -1,3 +1,4 @@
+</div>
 <div class="footer"></div>
 <!-- begin Modal callback  -->
 <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
@@ -28,16 +29,16 @@
         <h4 class="modal-title text-center">Найдите товар для своего автомобиля</h4>
       </div>
       <div class="modal-body">
-        <form id="form-searching-car" action="">
-          <div class="col-xs-3 make text-center">
+        <form id="form-searching-car" action="index.php?route=common/searching_car" method="post">
+          <div class="col-xs-3 brand text-center">
             <img src="image/catalog/make.png" />
-            <select class="form-control" name="make">
+            <select class="form-control" name="brand">
               <option value="">Выбор производителя</option>
             </select>
           </div>
           <div class="col-xs-3 year text-center">
             <img src="image/catalog/year.png" />
-            <select class="form-control" name="yaer">
+            <select class="form-control" name="year">
               <option value="">Выбор года</option>
             </select>
           </div>
@@ -51,8 +52,8 @@
             <button class="btn btn-submit" type="submit">Смотреть товар</button>
           </div>
           <div class="clearfix"></div>
+            <input type="hidden" name="category_id" value="" />
         </form>
-
       </div>
     </div>
   </div>

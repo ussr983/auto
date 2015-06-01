@@ -212,6 +212,56 @@ $(document).ready(function() {
         }
     });
     
+    $('#question').validate({
+        rules:{
+          name:{
+              required: true,
+              minlength: 2,
+              maxlength: 16,
+          },  
+          email:{
+              required: true,
+              email: true,
+          },
+          text:{
+              required: true,
+              minlength: 20,
+              maxlength: 500,
+          },
+           },
+        messages:{
+           name:{
+              required: "Это поле обязательно для заполнения",
+              minlength: "Имя должно быть минимум 2 символа",
+              maxlength: "Максимальное число символо - 16",
+          },  
+          email:{
+              required: "Это поле обязательно для заполнения",
+              email:    "Поле e-mail должно быть правильного формата",
+          },
+          text:{
+              required: "Это поле обязательно для заполнения",
+              minlength: "Вопрос должен быть минимум 20 символа",
+              maxlength: "Вопрос должен быть максимум 500 символов",
+          },
+        }
+    });
+    
+    $('#question').on('submit', function(e) {
+        e.preventDefault();
+        
+        if($(this).valid()) {
+            var form = $(this),
+                method = $(this).attr('method'),
+                action = $(this).attr('action'),
+                data = $(this).serialize();
+                
+            mail(form, method, action, data);
+        }
+        
+        return;
+    });
+    
     $('#form-callback').on('submit', function(e) {
         e.preventDefault();
         
@@ -454,7 +504,7 @@ $(document).delegate('.agree', 'click', function(e) {
 
 			$('#modal-agree').modal('show');
 		}
-	});
+	});    
 });
 
 // Autocomplete */

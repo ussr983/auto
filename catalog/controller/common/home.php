@@ -29,7 +29,7 @@ class ControllerCommonHome extends Controller {
 					'image' => '/image/' . $category['image'],
 					'name' => $category['name'],
 					'description' => $category['description'],
-					'href' => $this->url->link('product/category', 'path=' . $category['category_id'])
+					'category_id' => $category['category_id']
 				);
 			}
 		}

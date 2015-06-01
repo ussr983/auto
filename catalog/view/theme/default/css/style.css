@@ -7,8 +7,25 @@ body {
   font-size: 14px;
   color: #a9a9a9;
 }
-body {
+html,
+body,
+.page {
+  height: 100%;
+}
+.page {
+  min-height: 100%;
+  height: auto !important;
+  padding-bottom: 100px;
   background: url(../img/bg.jpg) no-repeat 50% 0;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
 }
 .img-responsive {
   display: block;
@@ -38,7 +55,7 @@ body {
   padding: 6px 0;
   font-size: 20px;
   color: #ffffff;
-  background: #e10001;
+  background: #391919;
 }
 .modal-content {
   border-radius: 0;
@@ -53,8 +70,11 @@ body {
   margin-bottom: 20px;
   border-radius: 0;
   background: #ffffff;
-  border-color: #cfb4b5;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+textarea.form-control {
+  resize: none;
+  height: 150px;
 }
 :focus::-webkit-input-placeholder {
   color: transparent;
@@ -68,6 +88,7 @@ body {
 :focus:-ms-input-placeholder {
   color: transparent;
 }
+
 /* Navigation section */
 .nav {
   background: linear-gradient(to right, transparent 30%, #1a1a1a 70%);
@@ -126,7 +147,7 @@ body {
   display: block;
   position: absolute;
   top: 80px;
-  left: 0;
+  left: -1px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -158,6 +179,7 @@ body {
 .top-nav li .dropdown-menu li:nth-child(3) a:before {
   content: none;
 }
+
 /* Header section */
 .header {
   position: relative;
@@ -250,14 +272,19 @@ body {
   top: 125px;
   background: url(../img/light.png) no-repeat 50% 50%;
 }
+
 /* About us section */
 .about-us {
   padding: 30px 0;
 }
+
 /* Category section */
 .category-item {
   position: relative;
   padding: 0 5px;
+}
+.category-item a {
+    display: block;
 }
 .category-item .title {
   display: block;
@@ -292,12 +319,17 @@ body {
   color: #ffffff;
   background: linear-gradient(to left, #000000, transparent);
 }
+
 /* Footer section */
 .footer {
+  height: 100px;
+  margin-top: -100px;
   padding: 15px;
   color: #767676;
   background: #101010;
+  clear: both;
 }
+
 /* Modal Callback */
 /* Modal Callback & Searching Car */
 .modal-content {
@@ -328,11 +360,11 @@ body {
   padding-left: 10px;
   text-transform: uppercase;
 }
-#searching-car .make,
+#searching-car .brand,
 #searching-car .year {
   position: relative;
 }
-#searching-car .make:after,
+#searching-car .brand:after,
 #searching-car .year:after {
   display: block;
   position: absolute;
@@ -345,4 +377,63 @@ body {
 }
 #searching-car .btn-submit {
   margin-top: 80px;
+}
+
+/* Page */
+.content-box {
+  margin: 30px 0;
+  padding: 30px 0;
+  background-color: rgba(0,0,0,.8);
+}
+.customer-service .col-xs-4 {
+  padding: 0 60px;
+}
+.customer-service .title {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.customer-service .link {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.customer-service .link li {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.customer-service .link li:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-family: "FontAwesome";
+  content: "\f105";
+  color: #ffffff;
+}
+.customer-service .link li.question-form:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  font-family: "FontAwesome";
+  content: "\f107";
+  color: #e10001;
+}
+.customer-service img {
+  margin: 30px 0 10px;
+}
+.customer-service .contacts {
+  padding: 30px 15px 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+#question {
+  margin-top: 30px;
+}
+.information .content-box {
+  padding: 30px;
 }

@@ -4,9 +4,7 @@ class ControllerMailMail extends Controller {
     public function index(){
         $this->load->library('mail');
         $mail = new Mail();
-//        echo '<pre>';
-//        print_r($this->request->post['name']);
-//        die('ok');
+        
         if (isset($this->request->post['name'])) {
             $name = $this->request->post['name'];
         }
@@ -15,7 +13,6 @@ class ControllerMailMail extends Controller {
         }
         if (isset($this->request->post['email'])) {
             $email = $this->request->post['email'];
-            $mail->setFrom($email);
         }
         if (isset($this->request->post['text'])) {
             $text = $this->request->post['text'];
@@ -46,7 +43,7 @@ class ControllerMailMail extends Controller {
         $mail->setTo('ussr983@gmail.com');
         $mail->setHtml($html);
         
-        if ($mail->send()) {
+        if (!$mail->send()) {
             echo json_encode("Письмо отправлено успешно"); 
             die; 
         } else {
