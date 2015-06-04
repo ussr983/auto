@@ -71,3 +71,10 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="cart">
+                <a href="<?php echo $shopping_cart; ?>">
+                    <?php echo $cart; ?>
+                </a>
+            </div>
+        </div>

@@ -34,6 +34,13 @@ $(document).ready(function() {
 		$('#content .product-layout:nth-child(4n+4)').after('<div class="clearfix"></div>');
 	}
 
+    //Hidden empty cart
+    var elText = $.trim($('.cart a').text());
+
+    if (elText == 'Ваша корзина пуста!') {
+        $('.cart').css('display', 'none');
+    }
+
 	// Highlight any found errors
 	$('.text-danger').each(function() {
 		var element = $(this).parent().parent();
@@ -187,64 +194,156 @@ $(document).ready(function() {
     }
     $('#form-callback').validate({
         rules:{
-          name:{
-              required: true,
-              minlength: 2,
-              maxlength: 16,
-          },
-          phone:{
-              required: true,
-              minlength: 5,
-              maxlength: 14,
-          },
-           },
+            name:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },
+            phone:{
+                required: true,
+                minlength: 5,
+                maxlength: 14,
+            },
+        },
         messages:{
-          name:{
-              required: "Это поле обязательно для заполнения",
-              minlength: "Имя должно быть минимум 2 символа",
-              maxlength: "Максимальное число символо - 16",
-          },
-          phone:{
-              required: "Это поле обязательно для заполнения",
-              minlength: "Телефон должен быть минимум 5 символа",
-              maxlength: "Пароль должен быть максимум 14 символов",
-          },
+            name:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Имя должно быть минимум 2 символа",
+                maxlength: "Максимальное число символо - 16",
+            },
+            phone:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Телефон должен быть минимум 5 символа",
+                maxlength: "Пароль должен быть максимум 14 символов",
+            },
         }
     });
     
     $('#question').validate({
         rules:{
-          name:{
-              required: true,
-              minlength: 2,
-              maxlength: 16,
-          },  
-          email:{
-              required: true,
-              email: true,
-          },
-          text:{
-              required: true,
-              minlength: 20,
-              maxlength: 500,
-          },
-           },
+            name:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },  
+            email:{
+                required: true,
+                email: true,
+            },
+            text:{
+                required: true,
+                minlength: 20,
+                maxlength: 500,
+            },
+        },
         messages:{
-           name:{
-              required: "Это поле обязательно для заполнения",
-              minlength: "Имя должно быть минимум 2 символа",
-              maxlength: "Максимальное число символо - 16",
-          },  
-          email:{
-              required: "Это поле обязательно для заполнения",
-              email:    "Поле e-mail должно быть правильного формата",
-          },
-          text:{
-              required: "Это поле обязательно для заполнения",
-              minlength: "Вопрос должен быть минимум 20 символа",
-              maxlength: "Вопрос должен быть максимум 500 символов",
-          },
+            name:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Имя должно быть минимум 2 символа",
+               maxlength: "Максимальное число символо - 16",
+            },  
+            email:{
+               required: "Это поле обязательно для заполнения",
+               email:    "Поле e-mail должно быть правильного формата",
+            },
+            text:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Вопрос должен быть минимум 20 символа",
+               maxlength: "Вопрос должен быть максимум 500 символов",
+            },
         }
+    });
+    
+    $('#order').validate({
+        rules:{
+            brand:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },
+            year:{
+                required: true,
+                digits: true,
+                minlength: 4,
+                maxlength: 4,
+            },
+            model:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },
+            name:{
+                required: true,
+                minlength: 2,
+                maxlength: 16,
+            },
+            email:{
+                required: true,
+                email: true,
+            },
+            phone:{
+                required: true,
+                minlength: 5,
+                maxlength: 14,
+            },
+            text:{
+                required: true,
+                minlength: 20,
+                maxlength: 500,
+            },
+        },
+        messages:{
+            brand:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Бренд должен быть минимум 2 символа",
+               maxlength: "Бренд должен быть максимум 16 символов",
+            },
+            year:{
+               required: "Это поле обязательно для заполнения",
+               digits:  "Поле должно содержать только цыфры",
+               minlength: "Год должен содержать 4 цифры",
+               maxlength: "Год должен содержать 4 цифры",
+            },
+            model:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Модель должна быть минимум 2 символа",
+               maxlength: "Модель должна быть максимум 16 символов",
+            },
+            name:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Имя должно быть минимум 2 символа",
+               maxlength: "Максимальное число символо - 16",
+            },
+            email:{
+                required: "Это поле обязательно для заполнения",
+                email:    "Поле e-mail должно быть правильного формата",
+            },
+            phone:{
+               required: "Это поле обязательно для заполнения",
+               minlength: "Телефон должен быть минимум 5 символов",
+               maxlength: "Телефон должен быть максимум 14 символов",
+            },
+            text:{
+                required: "Это поле обязательно для заполнения",
+                minlength: "Вопрос должен быть минимум 20 символа",
+                maxlength: "Вопрос должен быть максимум 500 символов",
+            },
+        }
+    });
+    
+    $('#order').on('submit', function(e) {
+        e.preventDefault();
+        
+        if($(this).valid()) {
+            var form = $(this),
+                method = $(this).attr('method'),
+                action = $(this).attr('action'),
+                data = $(this).serialize();
+                
+            mail(form, method, action, data);
+        }
+        
+        return;
     });
     
     $('#question').on('submit', function(e) {

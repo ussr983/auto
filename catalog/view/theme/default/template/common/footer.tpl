@@ -13,6 +13,7 @@
           <form id="form-callback" action="index.php?route=mail/mail" method="POST">
           <input class="form-control" type="text" name="name" placeholder="Введите имя" />
           <input class="form-control" type="text" name="phone" placeholder="Введите телефон" />
+          <input type="hidden" name="subject" placeholder="Обратный звонок" />
           <button class="btn btn-submit" type="submit">Позвоните мне</button>
         </form>
       </div>

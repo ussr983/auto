@@ -141,12 +141,13 @@ textarea.form-control {
   background: url(../img/icon-menu.png) no-repeat -100px 0;
 }
 .top-nav li:nth-child(1):hover .dropdown-menu {
+  top: 80px;
   opacity: 1;
 }
 .top-nav li .dropdown-menu {
   display: block;
   position: absolute;
-  top: 80px;
+  top: -9999em;
   left: -1px;
   margin: 0;
   padding: 0;
@@ -180,6 +181,34 @@ textarea.form-control {
   content: none;
 }
 
+/* Cart section */
+.cart {
+    position: relative;
+    width: 360px;
+    margin: 20px 0 0;
+    padding: 10px 0 10px 65px;
+    background: rgba(255, 255, 255, 0.9);
+    float: right;
+    box-sizing: border-box;
+}
+.cart:before {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 18px;
+    width: 32px;
+    height: 32px;
+    content: "";
+    background: url(../img/icon-cart.png) no-repeat 50% 50%;
+    background-size: cover;
+}
+.cart a,
+.cart a:hover,
+.cart a:focus,
+.cart a:active  {
+    color: #777;
+}
+
 /* Header section */
 .header {
   position: relative;
@@ -198,7 +227,7 @@ textarea.form-control {
 .callback {
   width: 360px;
   height: 110px;
-  margin: 30px 0 15px;
+  margin: 20px 0 15px;
   padding: 10px 0;
   background: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
@@ -238,11 +267,11 @@ textarea.form-control {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 .delivery-icon {
-  top: 162px;
+  top: 152px;
   left: 0;
 }
 .payment-icon {
-  top: 225px;
+  top: 215px;
   left: 0;
 }
 .btn-start {
